@@ -1,0 +1,69 @@
+
+previous model is on main_model_16k banch
+branch main_model_1noise-reducer-ml/Train/denoiser-inverse/denoiser/enhance_with_model.py
+
+
+
+
+
+
+
+
+
+
+# python3 -m denoiser.enhance --model_path /media/inverseai/1 TB Hard Disk/WAcc_Tashin/best.th --noisy_dir /media/inverseai/1 TB Hard Disk/WAcc_Tashin/noisy/ --out_dir /media/inverseai/1 TB Hard Disk/WAcc_Tashin/enhanced/
+
+
+cd ..
+
+cd hybridTransformerDemucsPytorch/
+cd denoiser/
+conda activate e
+python3 -m denoiser.enhance --model_path "/media/inverseai/1 TB Hard Disk/WAcc_Tashin/best.th" --noisy_dir "/media/inverseai/1 TB Hard Disk/WAcc_Tashin/noisy/" --out_dir "/media/inverseai/1 TB Hard Disk/WAcc_Tashin/enhanced/"
+
+
+
+python WAcc.py --testset_dir "/media/inverseai/1 TB Hard Disk/WAcc_Tashin/enhanced/" --score_file "/media/inverseai/1 TB Hard Disk/WAcc_Tashin/best.th"
+
+
+
+python WAcc.py --testset_dir "/media/inverseai/1 TB Hard Disk/WAcc_Tashin/enhanced/" --score_file "/media/inverseai/1 TB Hard Disk/WAcc_Tashin/score.csv" --transcripts_file "/media/inverseai/1 TB Hard Disk/WAcc_Tashin/v5_devset_transcripts_track2.tsv"
+
+
+python whisper_local.py "/media/inverseai/1 TB Hard Disk/WAcc_Tashin/enhanced/"  "/media/inverseai/1 TB Hard Disk/WAcc_Tashin/score.csv"
+
+
+
+
+ --transcripts_file "/media/inverseai/1 TB Hard Disk/WAcc_Tashin/transcripts/v5_devset_transcripts_track2.tsv"
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+ 
+#mos
+
+ python3 MOS_eval.py -t "/mnt/1 TB Hard Disk/WAcc_Tashin/enhanced" -o "/mnt/1 TB Hard Disk/WAcc_Tashin/"
+
+
+
+#final accuracy
+python3 Final_acc.py   "/mnt/1 TB Hard Disk/WAcc_Tashin/demux/Wacc.xlsx"  "/mnt/1 TB Hard Disk/WAcc_Tashin/demux/MOS_eval.xlsx" "/mnt/1 TB Hard Disk/WAcc_Tashin/demux/" 
+
+
+
+
+
+
+#enhanced with model
+
+
+ python3 enhance_with_model.py --model_path  "/mnt/1 TB Hard Disk/WAcc_Tashin/checkpoint_epoch-007_loss-0.002056_val_loss-0.002355.h5" --noisy_path "/mnt/1 TB Hard Disk/WAcc_Tashin/noisy_lite/" --enhanced_path "/mnt/1 TB Hard Disk/WAcc_Tashin/enhanced_lite/"
+
+

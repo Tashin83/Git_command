@@ -1,0 +1,108 @@
+glpat-5vr6GuvKxxm5ySRV4gKG
+
+
+git commit a text likhbo ticket number diye
+then:
+ 	git push 
+ 	id: tashin1
+ 	password: glpat-5vr6GuvKxxm5ySRV4gKG
+then teminal a link ta ctrl+click
+then marge request 
+	-assignee 
+	-reviewer
+	-Title(ticket name)
+	-description(what i've done)
+
+
+
+# Push
+git clone https://github.com/facebookresearch/denoiser.git
+git status
+git add .
+<!-- git add t.txt -->
+git commit -m " commit"
+git push -u origin main
+
+
+
+
+# Branch
+git branch
+git config user.name "Tashin83"
+git config user.email "tashin@inverseai.com"
+
+
+
+# Virtual Environment 
+pip install -r requirements.txt
+##create
+conda create --name myenv python=3.8
+##delete 
+conda remove --name e --all
+
+#
+git pull
+git checkout branch-name
+
+
+##run 
+conda env list
+conda activate your_environment_name
+conda deactivate
+
+#python 
+python t.py
+python t.py -help
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
